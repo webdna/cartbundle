@@ -62,7 +62,7 @@ class CartBundlePlugin extends BasePlugin
      */
     public function getDocumentationUrl()
     {
-        return '???';
+        return 'https://github.com/webdna/cartbundle/blob/master/README.md';
     }
 
     /**
@@ -74,7 +74,7 @@ class CartBundlePlugin extends BasePlugin
      */
     public function getReleaseFeedUrl()
     {
-        return '???';
+        return 'https://raw.githubusercontent.com/webdna/cartbundle/master/releases.json';
     }
 
     /**

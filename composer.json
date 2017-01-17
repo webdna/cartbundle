@@ -1,14 +1,14 @@
 {
-	"name": "/cartbundle",
-	"description": "Ability to show products in the cart as a bundle (ideal for use with Multi Add)",
-	"type": "craft-plugin",
-	"authors": [
-		{
-			"name": "webdna",
-			"homepage": "https://webdna.co.uk"
-		}
-	],
-	"require": {
-		"composer/installers": "~1.0"
-	}
+  "name": "cartbundle",
+  "description": "Ability to show products in the cart as a bundle (ideal for use with Multi Add)",
+  "type": "craft-plugin",
+  "authors": [
+    {
+      "name": "webdna",
+      "homepage": "https://webdna.co.uk"
+    }
+  ],
+  "require": {
+    "composer/installers": "~1.0"
+  }
 }
