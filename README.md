@@ -134,6 +134,8 @@ Example below will quickly dump out the data for you to see what is available
 
 [See releases](https://github.com/webdna/cartbundle/releases)
 
+---
+
 Brought to you by [webdna](https://webdna.co.uk)
 
 Hat tip to [Josh Crawford](https://github.com/engram-design)
