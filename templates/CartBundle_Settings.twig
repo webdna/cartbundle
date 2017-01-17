@@ -1,0 +1,39 @@
+{#
+/**
+ * Cart Bundle plugin for Craft CMS
+ *
+ * Cart Bundle Settings.twig
+ *
+ * @author    Nathaniel Hammond - @nfourtythree - webdna
+ * @copyright Copyright (c) 2017 webdna
+ * @link      http://webdna.co.uk
+ * @package   CartBundle
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: 'Bundle ID Handle',
+    instructions: 'This is the handle for where the bundle ID will be stored in cart options.',
+    id: 'bundleIdHandle',
+    name: 'bundleIdHandle',
+    value: settings['bundleIdHandle']})
+}}
+
+{{ forms.textField({
+    label: 'Bundle ID Salt',
+    instructions: 'Used to encrypt the bundle ID to stop users adding whatever they want',
+    id: 'bundleIdSalt',
+    name: 'bundleIdSalt',
+    value: settings['bundleIdSalt']})
+}}
+
+{{ forms.textField({
+    label: 'Bundle SKU Handle',
+    instructions: 'The field handle to use for the bundle SKU e.g. slug or myCustomSkuField. If left blank Bundle item SKUs will be combined',
+    id: 'bundleSkuHandle',
+    name: 'bundleSkuHandle',
+    value: settings['bundleSkuHandle']})
+}}
