@@ -7,7 +7,7 @@ Ability to show products in the cart as a bundle (ideal for use with [Multi Add]
 To install Cart Bundle, follow these steps:
 
 1. Download & unzip the file and place the `cartbundle` directory into your `craft/plugins` directory
-2.  -OR- do a `git clone https://github.com/webdna/cartbundle` directly into your `craft/plugins` folder.  You can then update it with `git pull`
+2.  -OR- do a `git clone https://github.com/webdna/cartbundle.git` directly into your `craft/plugins` folder.  You can then update it with `git pull`
 3.  -OR- install with Composer via `composer require https://github.com/webdna/cartbundle`
 4. Install plugin in the Craft Control Panel under Settings > Plugins
 5. The plugin folder should be named `cartbundle` for Craft to see it.  GitHub recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.
