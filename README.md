@@ -20,7 +20,11 @@ Cart Bundle is a simple plugin that allows you to show products as grouped (bund
 
 This plugin works great along with the [MultiAdd plugin](https://github.com/engram-design/MultiAdd). Big hat tip to [Josh Crawford](https://github.com/engram-design)
 
-*Examples below are for vanilla Craft without the MultiAdd plugin.*
+#### Template Examples
+
+- [Add to cart with vanilla Craft](#add-to-cart)
+- [Add to cart with MultiAdd Plugin](#add-to-cart-with-multiadd)
+- [Display cart with bundle items](#cart-display)
 
 **NOTE: This is plugin is only designed for output purposes it does not change the purchasable data**
 
@@ -69,8 +73,32 @@ The example shows `entry.id` being used for the `bundleId`. This ID essentially 
 
 ```twig
 
-  <input type="hidden" name="options[bundleId]" value="{{ entry.id|cartBundleIdEncrypt }}" />
-  <input type="hidden" name="options[bundleName]" value="{{ entry.title }}" />
+  <input type="hidden" name="options[bundleId]" value="{{ entry.id|cartBundleIdEncrypt }}">
+  <input type="hidden" name="options[bundleName]" value="{{ entry.title }}">
+
+```
+
+#### Add to cart with MultiAdd
+
+In this add to cart example there is code that demonstrates how to use the CartBundle plugin with the MultiAdd plugin.
+
+In the example the assumption has been made that there is a `product` variable that is an instance of a `productModel` that has multiple `variants`.
+
+```twig
+
+<form method="POST">
+  <input type="hidden" name="action" value="multiAdd/multiAdd">
+  <input type="hidden" name="redirect" value="/cart">
+  {{ getCsrfInput() }}
+
+  {% for variant in product.variants %}
+    <input type="hidden" name="items[{{ loop.index }}][purchasableId]" value="{{ variant.id }}">
+    <input type="hidden" name="items[{{ loop.index }}][qty]" value="1">
+    <input type="hidden" name="items[{{ loop.index }}][options][bundleId]" value="{{ product.id|cartBundleIdEncrypt }}">
+    <input type="hidden" name="items[{{ loop.index }}][options][bundleName]" value="{{ product.title }}">
+  {% endfor %}
+
+</form>
 
 ```
 
@@ -128,7 +156,8 @@ Example below will quickly dump out the data for you to see what is available
 
 ## Cart Bundle Roadmap
 
-* MORE FEATURES!
+- Remove weird id obscuring in favour of [hash security](https://craftcms.com/docs/templating/filters#hash)
+- MORE FEATURES!
 
 ## Cart Bundle Changelog
 

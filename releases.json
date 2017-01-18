@@ -1,5 +1,13 @@
 [
     {
+        "version": "1.0.2",
+        "downloadUrl": "https://github.com/webdna/cartbundle/archive/1.0.2.zip",
+        "date": "2017-01-18T08:37:00.126Z",
+        "notes": [
+            "[Added] Added MutliAdd add to cart example"
+        ]
+    },
+    {
         "version": "1.0.1",
         "downloadUrl": "https://github.com/webdna/cartbundle/archive/1.0.1.zip",
         "date": "2017-01-17T15:36:00.126Z",
