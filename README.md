@@ -34,7 +34,7 @@ This plugin works great along with the [MultiAdd plugin](https://github.com/engr
 
 * `Bundle ID Handle (bundleIdHandle)` - This is the handle used in the item options array in the cart to group bundle items together `Default: bundleId`
 * `Bundle ID Salt (bundleIdSalt)` - Salt used to encrypt the bundle ID for slight obscurity `Default: appId`
-* `Bundle SKU Handle (bundleSkyHandle)` - The field handle to use for the bundle SKU. If left blank Bundle item SKUs will be combined `Default: e.g. ITEM1SKU-ITEM2SKU-ITEM3SKU`
+* `Bundle SKU Handle (bundleSkuHandle)` - The field handle to use for the bundle SKU. If left blank Bundle item SKUs will be combined `Default: e.g. ITEM1SKU-ITEM2SKU-ITEM3SKU`
 
 ### Twig Filters
 
