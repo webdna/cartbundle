@@ -1,5 +1,15 @@
 [
     {
+        "version": "1.0.3",
+        "downloadUrl": "https://github.com/webdna/cartbundle/archive/1.0.3.zip",
+        "date": "2017-01-19T11:32:00.126Z",
+        "notes": [
+            "[Fixed] Fixed bundle lineItem not reporting total
+            [Improved] Removed composer files as it is not required
+            [Fixed] Fixed Typo of bundleSkuHandle in readme"
+        ]
+    },
+    {
         "version": "1.0.2",
         "downloadUrl": "https://github.com/webdna/cartbundle/archive/1.0.2.zip",
         "date": "2017-01-18T08:37:00.126Z",

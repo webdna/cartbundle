@@ -3,7 +3,7 @@
  * Cart Bundle plugin for Craft CMS
  *
  * CartBundle Service
- * 
+ *
  * @author    Nathaniel Hammond - @nfourtythree - webdna
  * @copyright Copyright (c) 2017 webdna
  * @link      https://webdna.co.uk
@@ -128,11 +128,14 @@ class CartBundleService extends BaseApplicationComponent
           // Create snapshot data
           $snapshot = array(
               'price'         => $newLineItem->price,
+              'salePrice'     => $newLineItem->salePrice,
               'sku'           => $sku,
               'description'   => $bundleEntry->title,
               'cpEditUrl'     => '#',
               'options'       => $newLineItem->options
           );
+
+          $newLineItem->total = $newLineItem->getTotal();
           $newLineItem->snapshot = $snapshot;
         }
 
