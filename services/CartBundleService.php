@@ -107,16 +107,27 @@ class CartBundleService extends BaseApplicationComponent
 
         $itemOptions = array(
           'bundle' => $bundleEntry,
+          'bundleLineItemId' => '',
           'bundleItems' => array()
         );
 
-        // Get new totals
-        foreach ( $bundle as $item ) {
-          $newLineItem->price += $item->price;
-          $newLineItem->salePrice += $item->salePrice;
+        if ( count( $bundle ) ) {
 
-          // Make sure item data is still available
-          $itemOptions[ 'bundleItems' ][] = $item;
+          // Set the quantity of the bundle container
+          // For the moment all items in the bundle will have the same qty
+          $newLineItem->qty = $bundle[ 0 ]->qty;
+
+          // Get new totals
+          foreach ( $bundle as $item ) {
+            // Concatenate lineItem ids to form an ID for the bundle
+            $itemOptions[ 'bundleLineItemId' ] .= ( !$itemOptions[ 'bundleLineItemId' ] ) ? $item->id : '-' . $item->id;
+
+            $newLineItem->price += $item->price;
+            $newLineItem->salePrice += $item->salePrice;
+
+            // Make sure item data is still available
+            $itemOptions[ 'bundleItems' ][] = $item;
+          }
         }
 
         $newLineItem->options = $itemOptions;

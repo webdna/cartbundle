@@ -4,7 +4,6 @@
  *
  * Ability to show products in the cart as a bundle (ideal for use with Multi Add)
  *
- *
  * @author    Nathaniel Hammond - @nfourtythree - webdna
  * @copyright Copyright (c) 2017 webdna
  * @link      https://webdna.co.uk
@@ -40,7 +39,7 @@ class CartBundlePlugin extends BasePlugin
      */
     public function getName()
     {
-         return Craft::t('Cart Bundle');
+         return Craft::t( 'Cart Bundle' );
     }
 
     /**
@@ -62,7 +61,7 @@ class CartBundlePlugin extends BasePlugin
      */
     public function getDocumentationUrl()
     {
-        return 'https://github.com/webdna/cartbundle/blob/master/README.md';
+        return 'https://github.com/webdna/cartbundle/wiki';
     }
 
     /**
@@ -84,7 +83,7 @@ class CartBundlePlugin extends BasePlugin
      */
     public function getVersion()
     {
-        return '1.0.3';
+        return '1.1.0';
     }
 
     /**
@@ -182,9 +181,9 @@ class CartBundlePlugin extends BasePlugin
     protected function defineSettings()
     {
         return array(
-            'bundleIdHandle' => array(AttributeType::String, 'label' => 'Bundle ID Handle', 'default' => 'bundleId'),
-            'bundleIdSalt' => array(AttributeType::String, 'label' => 'Bundle ID Salt', 'default' => craft()->config->get( 'appId' )),
-            'bundleSkuHandle' => array(AttributeType::String, 'label' => 'Bundle SKU Handle', 'default' => ''),
+            'bundleIdHandle' => array( AttributeType::String, 'label' => 'Bundle ID Handle', 'default' => 'bundleId' ),
+            'bundleIdSalt' => array( AttributeType::String, 'label' => 'Bundle ID Salt', 'default' => craft()->config->get( 'appId' ) ),
+            'bundleSkuHandle' => array( AttributeType::String, 'label' => 'Bundle SKU Handle', 'default' => '' ),
         );
     }
 
@@ -195,9 +194,9 @@ class CartBundlePlugin extends BasePlugin
      */
     public function getSettingsHtml()
     {
-       return craft()->templates->render('cartbundle/CartBundle_Settings', array(
+       return craft()->templates->render( 'cartbundle/CartBundle_Settings', array(
            'settings' => $this->getSettings()
-       ));
+       ) );
     }
 
     /**
