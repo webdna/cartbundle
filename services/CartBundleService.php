@@ -21,6 +21,8 @@ class CartBundleService extends BaseApplicationComponent
   protected $bundles = array();
   protected $bundled = false;
   protected $bundledLineItems = array();
+  protected $uniqueId;
+  protected $bundleIdSeparator = '-=-';
 
   /**
   * Contstructor function
@@ -30,6 +32,7 @@ class CartBundleService extends BaseApplicationComponent
   {
     $this->plugin = craft()->plugins->getPlugin( $this->pluginHandle );
     $this->settings = $this->plugin->getSettings();
+    $this->uniqueId = $this->bundleIdSeparator . time() . '-' . rand( 1, 10 );
   }
 
   /**
@@ -102,8 +105,11 @@ class CartBundleService extends BaseApplicationComponent
         $newLineItem->salePrice = 0;
 
         // Get bundle data and make it avaiable in the front end
-        $elementType = craft()->elements->getElementTypeById( $bundleId );
-        $bundleEntry = craft()->elements->getCriteria( $elementType, array( 'id' => $bundleId ) )->first();
+        $bundleIdParts = explode( $this->bundleIdSeparator, $bundleId );
+        $bundleEntryId = $bundleIdParts[0];
+
+        $elementType = craft()->elements->getElementTypeById( $bundleEntryId );
+        $bundleEntry = craft()->elements->getCriteria( $elementType, array( 'id' => $bundleEntryId ) )->first();
 
         $itemOptions = array(
           'bundle' => $bundleEntry,
@@ -223,7 +229,7 @@ class CartBundleService extends BaseApplicationComponent
   public function encryptId( $id = false )
   {
     if ( $id ) {
-
+      $id = $id . $this->uniqueId;
       return $this->encrypt( $id );
 
     } else {

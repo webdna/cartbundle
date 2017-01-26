@@ -1,5 +1,13 @@
 [
     {
+        "version": "1.1.1",
+        "downloadUrl": "https://github.com/webdna/cartbundle/archive/1.1.1..zip",
+        "date": "2017-01-26T10:26:00.126Z",
+        "notes": [
+            "[Fixed] Fixed issue with multiple bundles being squashed together"
+        ]
+    },
+    {
         "version": "1.1.0",
         "downloadUrl": "https://github.com/webdna/cartbundle/archive/1.1.0..zip",
         "date": "2017-01-23T10:15:00.126Z",

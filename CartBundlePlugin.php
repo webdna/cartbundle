@@ -50,7 +50,7 @@ class CartBundlePlugin extends BasePlugin
      */
     public function getDescription()
     {
-        return Craft::t('Ability to show products in the cart as a bundle (ideal for use with Multi Add)');
+        return Craft::t( 'Ability to show products in the cart as a bundle (ideal for use with Multi Add)' );
     }
 
     /**
@@ -83,7 +83,7 @@ class CartBundlePlugin extends BasePlugin
      */
     public function getVersion()
     {
-        return '1.1.0';
+        return '1.1.1';
     }
 
     /**
@@ -136,7 +136,7 @@ class CartBundlePlugin extends BasePlugin
      */
     public function addTwigExtension()
     {
-        Craft::import('plugins.cartbundle.twigextensions.CartBundleTwigExtension');
+        Craft::import( 'plugins.cartbundle.twigextensions.CartBundleTwigExtension' );
 
         return new CartBundleTwigExtension();
     }
