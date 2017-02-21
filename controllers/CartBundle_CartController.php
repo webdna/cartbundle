@@ -15,6 +15,11 @@ namespace Craft;
 
 class CartBundle_CartController extends BaseController
 {
+  
+  protected $allowAnonymous = array(
+    'actionUpdateLineItem',
+  );
+
   /**
    * Update Line Item - sits infront of the Craft Commerce update line
    * item to handle bundle qty updates
