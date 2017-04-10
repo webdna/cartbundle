@@ -42,23 +42,20 @@ class CartBundleService extends BaseApplicationComponent
   {
     // Get the current cart
     $cart = craft()->commerce_cart->getCart();
-    $cartItemsCount = count( $cart->lineItems );
+    $lineItems = $cart->lineItems;
 
     // Only worry about doing more processing if there are enough items in the cart to bundle
-    if ( $cartItemsCount > 1 ) {
+    if ( count( $lineItems ) > 1 ) {
       $lineItems = $this->bundleItems( $cart->lineItems );
-
-      $qty = 0;
-
-      foreach ( $lineItems as $item ) {
-        $qty += $item->qty;
-      }
-
-      $cartItemsCount = $qty;
-
     }
 
-    return $cartItemsCount;
+    $qty = 0;
+
+    foreach ( $lineItems as $item ) {
+      $qty += $item->qty;
+    }
+
+    return $qty;
   }
 
   /**
