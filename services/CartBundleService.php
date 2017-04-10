@@ -47,7 +47,15 @@ class CartBundleService extends BaseApplicationComponent
     // Only worry about doing more processing if there are enough items in the cart to bundle
     if ( $cartItemsCount > 1 ) {
       $lineItems = $this->bundleItems( $cart->lineItems );
-      $cartItemsCount = count( $lineItems );
+
+      $qty = 0;
+
+      foreach ( $lineItems as $item ) {
+        $qty += $item->qty;
+      }
+
+      $cartItemsCount = $qty;
+
     }
 
     return $cartItemsCount;
